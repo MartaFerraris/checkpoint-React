@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Pokedex } from "./Pokedex";
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+export function App() {
+  return(
+    <div>
+      <h1>Checkpoint React</h1>
+      <Pokedex/>
+    </div>
   )
 }
 
-export default App
+/*
+Sviluppiamo un Pokédex usando l’API https://pokeapi.co.
+Punti obbligatori:
+1) Creiamo un campo di testo dove inserire il nome del Pokemon da cercare;
+2) Tramite una chiamata GET a “https://pokeapi.co/api/v2/pokemon/{POKEMON_NAME}”
+ricaviamo le informazioni necessarie;
+3) Mettiamo a display le informazioni principali:
+a) Immagine;
+b) Nome;
+c) Esperienza di base;
+d) Abilità;
+4) Se la chiamata restituisce un errore evitiamo di mandare in crash lo script, piuttosto
+mettiamo in output un messaggio di errore a video per l’utente dando la possibilità di cercare un
+altro Pokemon;
+Punti opzionali:
+Al click di un bottone "More info" da visualizzare contestualmente ai dati della scheda del
+Pokemon vogliamo aggiungere le seguenti informazioni:
+1) Egg group;
+2) Colore;
+3) Forma;
+Effettuando una chiamata GET al link
+"https://pokeapi.co/api/v2/pokemon-species/{POKEMON_ID}"*/
